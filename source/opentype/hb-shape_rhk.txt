@@ -1,0 +1,1 @@
+hb-shape --font-file=CR_ufo_ot.ttf --unicodes="0049 02DE 02DE" --output-format=json  --trace --shapers=ot --output-file="hb-shape_out.txt"

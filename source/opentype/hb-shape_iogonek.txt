@@ -1,0 +1,1 @@
+hb-shape --font-file=CharisSIL-Regular.ttf --unicodes="012F 030D" --features="smcp=1,cv76=1" --output-format=json  --trace --shapers=ot --output-file="hb-shape_out.txt"
