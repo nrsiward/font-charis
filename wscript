@@ -13,7 +13,7 @@ DEBPKG = 'fonts-sil-charis'
 # Get VERSION and BUILDLABEL from Regular UFO; must be first function call:
 getufoinfo('source/masters/' + familyname + '-Regular' + '.ufo')
 
-ftmlTest('tools/ftml-smith.xsl')
+ftmlTest('common/tools/ftml-smith.xsl')
 
 opts = preprocess_args({'opt': '--quick'})
 
@@ -33,12 +33,12 @@ for dspace in ('Roman', 'Italic'):
                 instances = ['Charis SIL Regular'] if '--quick' in opts else None,
 #                classes = 'source/${DS:FAMILYNAME_NOSPC}_classes.xml', # fails for Gentium Book
                 classes = 'source/classes.xml',
-                opentype = fea('source/${DS:FILENAME_BASE}.fea',
-                    master = 'source/opentype/main.feax',
+                opentype = fea('common/source/${DS:FILENAME_BASE}.fea',
+                    master = 'common/source/opentype/main.feax',
                     make_params = omitapps,
-                    depends = ('source/opentype/gsub.feax',
-                        'source/opentype/gpos.feax',
-                        'source/opentype/gdef.feax'),
+                    depends = ('common/source/opentype/gsub.feax',
+                        'common/source/opentype/gpos.feax',
+                        'common/source/opentype/gdef.feax'),
                     mapfile = 'source/${DS:FILENAME_BASE}.map',
                     to_ufo = 'True' # copies to instance UFOs
                     ),
