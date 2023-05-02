@@ -1,3 +1,0 @@
-include(../../source/opentype/gsub.feax);
-include(../../source/opentype/gpos.feax);
-include(../../source/opentype/gdef.feax);
