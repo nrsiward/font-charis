@@ -8,10 +8,10 @@ psffixffglifs source/masters/CharisSIL-BoldItalic.ufo -p checkfix=fix  &
 wait
 
 echo "-----Updating production names in Regular..."
-psfsetpsnames -q -p checkfix=fix -i source/glyph_data.csv source/masters/CharisSIL-Regular.ufo -p backup=False -x
+psfsetpsnames -q -p checkfix=fix -i common/source/glyph_data.csv source/masters/CharisSIL-Regular.ufo -p backup=False -x
 
 echo "-----Updating glyph orders in Regular..."
-psfsetglyphorder -q --header sort_final_cdg -i source/glyph_data.csv source/masters/CharisSIL-Regular.ufo -p backup=False -x
+psfsetglyphorder -q --header sort_final_cdg -i common/source/glyph_data.csv source/masters/CharisSIL-Regular.ufo -p backup=False -x
 
 echo "-----Rebuilding composites..."
 psfbuildcomp -i source/composites.txt -c -n source/masters/CharisSIL-Regular.ufo -p backup=False -p loglevel=v
