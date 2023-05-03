@@ -61,11 +61,11 @@ arg_lst = [
     "tests/allchars.ftml",
     "-t", "allchars",
     "-f", "C",
-    "-i", "source/glyph_data.csv",
+    "-i", "common/source/glyph_data.csv",
     "--classes", "source/classes.xml"
     "-s", "../results/CharisSIL-Regular.ttf",
     "--scale", "200",
-    "--xsl", "../tools/ftml.xsl",
+    "--xsl", "../common/tools/ftml.xsl",
     "-l", "tests/logs/allchars.log",
 ]
 
