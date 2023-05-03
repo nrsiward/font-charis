@@ -7,7 +7,9 @@
 #  as are the heavier (Book) weights
 
 import sys, glob, os.path, re
-import psfgenftml
+import subprocess
+
+psfgenftml_fn = "common/tools/psfgenftml.py"
 
 # tests to generate (see psfgenftml.py)
 test_lst = ["allchars", "allframed", "diacs", "features", "smcp"]
@@ -77,11 +79,11 @@ arg_cols_template_lst = [
     "tests/{test}.ftml",
     "-t", "{test}",
     "-f", "{font_code}",
-    "-i", "source/{glyph_data}.csv",
+    "-i", "common/source/{glyph_data}.csv",
     "--classes", "source/{classes}",
 #    "-s", "../results/{ufo_regular}.ttf", # multiple "-s" args will be appended for multi-font tests
     "--scale", "{scale}",
-    "--xsl", "../tools/{xsl}.xsl",
+    "--xsl", "../common/tools/{xsl}.xsl",
     "-l", "tests/logs/{test}.log",
 ]
 
@@ -102,6 +104,4 @@ for test in test_lst:
     arg_lst.extend(["-s", "../references/v6101/CharisSIL-Bold.ttf=CB6"])
     arg_lst.extend(["-s", "../references/v6101/CharisSIL-Italic.ttf=CI6"])
     arg_lst.extend(["-s", "../references/v6101/CharisSIL-BoldItalic.ttf=CBI6"])
-    sys.argv = [psfgenftml.__file__]
-    sys.argv.extend(arg_lst)
-    psfgenftml.cmd()
+    subprocess.run(["python3", psfgenftml_fn] + arg_lst)
