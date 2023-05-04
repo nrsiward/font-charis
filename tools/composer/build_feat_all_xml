@@ -1,5 +1,7 @@
 # assumes the ttf has been built with updated fea and classes
 #  smith build --quick
+# for a given family, modify *.ttf file names, option to glyph_data_to_gsi.py and updateTTfeatnames.py,
+#  and name of gsi_glyph_data_*.xml file passed to composer.pl
 
 cp ../../common/source/glyph_data.csv .
 cp ../../common/source/featureinfo.yaml .
